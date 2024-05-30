@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Airness</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- Home -->
+    <string name="home_page_round_title">Nouveautés artisanales</string>
+    <string name="home_page_catchphrase_dark">Solution artisanale</string>
+    <string name="home_page_catchphrase_light_dark">Pour votre mobilier de qualité</string>
+    <string name="home_page_description">Découvrez notre collection de meubles artisanaux fabriqués avec des matériaux de qualité en France par des artisans passionnés.</string>
+    <string name="home_page_phrase_partner">Découvrez nos partenaires de confiance.</string>
+    <!-- Meuble -->
+    <string name="meuble_page_add_basket">Ajouter au panier</string>
+    <string name="meuble_page_see_product">Voir le produit</string>
+
+
+    <!-- Products -->
+
+    <!-- Categories -->
+
+</resources>
+
+
+
+
+

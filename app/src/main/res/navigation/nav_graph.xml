@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.airness.myapplication.ui.HomeFragment"
+        android:label="Accueil"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_products"
+        android:name="com.airness.myapplication.ui.ProductsFragment"
+        android:label="Produits"
+        tools:layout="@layout/fragment_products" />
+
+    <fragment
+        android:id="@+id/nav_categories"
+        android:name="com.airness.myapplication.ui.CategoriesFragment"
+        android:label="Catégories"
+        tools:layout="@layout/fragment_categories" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.airness.myapplication.ui.SettingsFragment"
+        android:label="Paramètres"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>
