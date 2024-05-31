@@ -10,13 +10,13 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.airness.myapplication.databinding.FragmentHomeBinding
 import com.airness.myapplication.viewmodel.MeubleViewModel
+import com.bumptech.glide.Glide
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val viewModel: MeubleViewModel by viewModels()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +28,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Charger l'image avec Glide
+        Glide.with(this)
+            .load("URL_DE_VOTRE_IMAGE") // Remplacez par l'URL de votre image
+            .into(binding.imageViewMeuble)
 
         val recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(context)
