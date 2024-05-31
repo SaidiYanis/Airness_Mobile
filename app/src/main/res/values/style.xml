@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/darkGray</item>
+        <item name="colorAccent">@color/accentColor</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Style for default text -->
+    <style name="DefaultTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!-- Style for gray text -->
+    <style name="GrayTextStyle">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/lightGray</item>
+    </style>
+
+    <!-- Style for headings -->
+    <style name="HeadingTextStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Style for subheadings -->
+    <style name="SubheadingTextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/secondaryColor</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Style for button text -->
+    <style name="ButtonTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/accentColor</item>
+    </style>
+
+    <!-- Add other styles as needed -->
+</resources>

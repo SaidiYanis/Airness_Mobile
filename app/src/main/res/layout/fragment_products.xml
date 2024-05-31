@@ -5,8 +5,11 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
+    <!-- Assurez-vous que le bouton a l'identifiant correct -->
+    <Button
+        android:id="@+id/buttonToHome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Produits" />
+        android:text="Retour à l'accueil" />
+
 </LinearLayout>

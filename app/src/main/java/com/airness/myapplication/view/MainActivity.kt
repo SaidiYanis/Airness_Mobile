@@ -2,7 +2,10 @@ package com.airness.myapplication.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavController
+import androidx.navigation.NavOptions
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import com.airness.myapplication.R
@@ -28,14 +31,36 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_categories,
                 R.id.nav_settings
             ),
-            binding.drawerLayout // Utilisation de binding.drawerLayout
+            binding.drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
 
-        binding.fab.setOnClickListener {
-            // Exemple de clic sur le bouton flottant
+        binding.navView.setNavigationItemSelectedListener { menuItem ->
+            // Handle navigation view item clicks here.
+            when (menuItem.itemId) {
+                R.id.nav_home -> {
+                    navController.navigate(R.id.nav_home, null, getNavOptions())
+                }
+                R.id.nav_products -> {
+                    navController.navigate(R.id.nav_products, null, getNavOptions())
+                }
+                R.id.nav_categories -> {
+                    navController.navigate(R.id.nav_categories, null, getNavOptions())
+                }
+                R.id.nav_settings -> {
+                    navController.navigate(R.id.nav_settings, null, getNavOptions())
+                }
+            }
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+            true
         }
+    }
+
+    private fun getNavOptions(): NavOptions {
+        return NavOptions.Builder()
+            .setPopUpTo(R.id.nav_graph, true)
+            .build()
     }
 
     override fun onSupportNavigateUp(): Boolean {

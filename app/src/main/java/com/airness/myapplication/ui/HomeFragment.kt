@@ -5,18 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.fragment.findNavController
 import com.airness.myapplication.databinding.FragmentHomeBinding
-import com.airness.myapplication.viewmodel.MeubleViewModel
 import com.bumptech.glide.Glide
+import com.airness.myapplication.R
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: MeubleViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,20 +27,19 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Charger l'image avec Glide
+        // Charger l'image avec Glide et arrondir les coins en haut
         Glide.with(this)
-            .load("URL_DE_VOTRE_IMAGE") // Remplacez par l'URL de votre image
+            .load(R.drawable.meuble) // Référence à l'image dans drawable
+            .transform(RoundedCornersTransformation(30, 0, RoundedCornersTransformation.CornerType.TOP))
             .into(binding.imageViewMeuble)
 
-        val recyclerView = binding.recyclerView
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        val adapter = MeubleAdapter()
-        recyclerView.adapter = adapter
+        binding.buttonProducts.setOnClickListener {
+            findNavController().navigate(R.id.nav_products)
+        }
 
-        viewModel.meubles.observe(viewLifecycleOwner, Observer {
-            adapter.submitList(it)
-        })
-        viewModel.fetchMeubles()
+        binding.buttonCategories.setOnClickListener {
+            findNavController().navigate(R.id.nav_categories)
+        }
     }
 
     override fun onDestroyView() {

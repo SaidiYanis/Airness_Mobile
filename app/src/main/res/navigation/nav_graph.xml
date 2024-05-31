@@ -28,5 +28,4 @@
         android:name="com.airness.myapplication.ui.SettingsFragment"
         android:label="Paramètres"
         tools:layout="@layout/fragment_settings" />
-
 </navigation>

@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,29 +5,54 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/home_page_title"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_marginTop="@dimen/fab_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_page_round_title" />
+        android:text="@string/home_page_round_title"
+        style="@style/SubheadingTextStyle"/>
+
+    <TextView
+        android:id="@+id/home_page_big_title"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_page_catchphrase_dark"
+        style="@style/HeadingTextStyle"/>
+
+    <TextView
+        android:id="@+id/home_page_subtitle"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/home_page_catchphrase_light_dark"
+        style="@style/GrayTextStyle"/>
 
     <TextView
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_page_catchphrase_dark" />
+        android:text="@string/home_page_description"
+        style="@style/GrayTextStyle"/>
 
-    <TextView
+    <Button
+        android:id="@+id/button_products"
         android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_page_catchphrase_light_dark" />
+        android:text="@string/button_products"
+        style="@style/ButtonTextStyle"/>
 
-    <TextView
+    <Button
+        android:id="@+id/button_categories"
         android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_page_description" />
+        android:text="@string/button_categories"
+        style="@style/ButtonTextStyle"/>
 
     <ImageView
         android:id="@+id/imageViewMeuble"
@@ -37,11 +61,5 @@
         android:layout_marginTop="16dp"
         android:scaleType="centerCrop"
         android:contentDescription="@string/meuble_image" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="16dp" />
 
 </LinearLayout>

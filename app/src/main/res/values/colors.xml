@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lightGray">#989CA0</color>
     <color name="darkGray">#202122</color>
-
+    <color name="primaryColor">#2D2D2D</color> <!-- Couleur noire pour les titres -->
+    <color name="secondaryColor">#585858</color> <!-- Couleur grise pour les sous-titres -->
+    <color name="accentColor">#1E88E5</color> <!-- Couleur d'accentuation pour les boutons -->
 </resources>
