@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.airness.myapplication.databinding.FragmentHomeBinding
+import com.airness.myapplication.util.TopRoundedCornersTransformation
 import com.bumptech.glide.Glide
 import com.airness.myapplication.R
-import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
 class HomeFragment : Fragment() {
 
@@ -30,7 +30,7 @@ class HomeFragment : Fragment() {
         // Charger l'image avec Glide et arrondir les coins en haut
         Glide.with(this)
             .load(R.drawable.meuble) // Référence à l'image dans drawable
-            .transform(RoundedCornersTransformation(30, 0, RoundedCornersTransformation.CornerType.TOP))
+            .transform(TopRoundedCornersTransformation(30f)) // Modifier le rayon selon vos besoins
             .into(binding.imageViewMeuble)
 
         binding.buttonProducts.setOnClickListener {

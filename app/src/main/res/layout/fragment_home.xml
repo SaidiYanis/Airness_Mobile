@@ -36,6 +36,15 @@
         android:text="@string/home_page_description"
         style="@style/GrayTextStyle"/>
 
+    <ImageView
+        android:id="@+id/imageViewMeuble"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/meuble_image" />
+
     <Button
         android:id="@+id/button_products"
         android:layout_marginLeft="@dimen/fab_margin"
@@ -54,12 +63,6 @@
         android:text="@string/button_categories"
         style="@style/ButtonTextStyle"/>
 
-    <ImageView
-        android:id="@+id/imageViewMeuble"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="16dp"
-        android:scaleType="centerCrop"
-        android:contentDescription="@string/meuble_image" />
+
 
 </LinearLayout>
