@@ -1,0 +1,14 @@
+<resources>
+    <color name="primaryColor">#000000</color> <!-- Noir -->
+    <color name="secondaryColor">#303030</color> <!-- Gris foncé -->
+    <color name="textColorPrimary">#FFFFFF</color> <!-- Blanc -->
+    <color name="textColorSecondary">#B0B0B0</color> <!-- Gris clair -->
+    <color name="buttonColorPrimary">#FFFFFF</color> <!-- Blanc -->
+    <color name="buttonColorSecondary">#000000</color> <!-- Noir -->
+    <color name="blueGrayColor">#455A64</color> <!-- Bleu gris foncé adapté au mode sombre -->
+    <color name="darkGray">#121212</color> <!-- Gris très foncé -->
+    <color name="accentColor">#FF4081</color> <!-- Couleur d'accentuation -->
+    <color name="black">#000000</color> <!-- Noir -->
+    <color name="white">#FFFFFF</color> <!-- Blanc -->
+    <color name="colorBackground">#121212</color> <!-- Gris très foncé pour l'arrière-plan -->
+</resources>

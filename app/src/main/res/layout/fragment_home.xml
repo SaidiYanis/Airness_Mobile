@@ -1,19 +1,30 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".ui.HomeFragment">
 
-    <TextView
-        android:id="@+id/home_page_title"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/home_page_round_title"
-        style="@style/SubheadingTextStyle"/>
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@color/primaryColor">
 
-    <TextView
+        <TextView
+            android:id="@+id/home_page_title"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_page_round_title"
+            android:background="@drawable/rounded_black_border"
+            android:padding="2dp"
+            style="@style/SubheadingTextStyle"/>
+
+
+
+        <TextView
         android:id="@+id/home_page_big_title"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_width="wrap_content"
@@ -36,33 +47,91 @@
         android:text="@string/home_page_description"
         style="@style/GrayTextStyle"/>
 
-    <ImageView
+    <Button
+        android:id="@+id/button_products"
+        style="@style/PrimaryButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/button_products" />
+
+        <Button
+            android:id="@+id/button_categories"
+            style="@style/SecondaryButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/button_categories" />
+
+        <ImageView
         android:id="@+id/imageViewMeuble"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="400dp"
         android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:contentDescription="@string/meuble_image" />
 
-    <Button
-        android:id="@+id/button_products"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginTop="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_products"
-        style="@style/ButtonTextStyle"/>
+        <TextView
+            style="@style/GrayTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|bottom"
+            android:paddingTop="40dp"
+            android:text="@string/home_page_partainers" />
 
-    <Button
-        android:id="@+id/button_categories"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_marginTop="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/button_categories"
-        style="@style/ButtonTextStyle"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <ImageButton
+                android:id="@+id/logo_amazon"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/amazon"
+                android:scaleType="fitCenter"
+                android:src="@drawable/amazon" />
 
 
+            <ImageButton
+                android:id="@+id/logo_google"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/google"
+                android:scaleType="fitCenter"
+                android:src="@drawable/google" />
 
-</LinearLayout>
+
+            <ImageButton
+                android:id="@+id/logo_netflix"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/netflix"
+                android:scaleType="fitCenter"
+                android:src="@drawable/netflix" />
+
+
+            <ImageButton
+                android:id="@+id/logo_microsoft"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/microsoft"
+                android:scaleType="fitCenter"
+                android:src="@drawable/microsoft" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

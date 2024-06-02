@@ -10,6 +10,9 @@ import com.airness.myapplication.databinding.FragmentHomeBinding
 import com.airness.myapplication.util.TopRoundedCornersTransformation
 import com.bumptech.glide.Glide
 import com.airness.myapplication.R
+import android.content.Intent
+import android.net.Uri
+
 
 class HomeFragment : Fragment() {
 
@@ -19,7 +22,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -30,7 +33,7 @@ class HomeFragment : Fragment() {
         // Charger l'image avec Glide et arrondir les coins en haut
         Glide.with(this)
             .load(R.drawable.meuble) // Référence à l'image dans drawable
-            .transform(TopRoundedCornersTransformation(30f)) // Modifier le rayon selon vos besoins
+            .transform(TopRoundedCornersTransformation(800f)) // Modifier le rayon selon vos besoins
             .into(binding.imageViewMeuble)
 
         binding.buttonProducts.setOnClickListener {
@@ -40,6 +43,39 @@ class HomeFragment : Fragment() {
         binding.buttonCategories.setOnClickListener {
             findNavController().navigate(R.id.nav_categories)
         }
+
+        // Gestionnaire pour Amazon
+        binding.logoAmazon.setOnClickListener {
+            val url = "https://www.amazon.com"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        // Gestionnaire pour Google
+        binding.logoGoogle.setOnClickListener {
+            val url = "https://www.google.com"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        // Gestionnaire pour Netflix
+        binding.logoNetflix.setOnClickListener {
+            val url = "https://www.netflix.com"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
+        // Gestionnaire pour Microsoft
+        binding.logoMicrosoft.setOnClickListener {
+            val url = "https://www.microsoft.com"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
+
     }
 
     override fun onDestroyView() {

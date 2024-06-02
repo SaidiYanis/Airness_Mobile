@@ -1,8 +1,12 @@
+import org.apache.tools.ant.util.JavaEnvUtils.VERSION_1_8
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
 }
+val sourceCompatibility by extra(VERSION_1_8)
+val targetCompatibility by extra(VERSION_1_8)
 
 android {
     namespace = "com.airness.myapplication"
@@ -37,6 +41,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    buildToolsVersion = "34.0.0"
 }
 
 dependencies {

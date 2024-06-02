@@ -16,6 +16,11 @@
     <string name="button_products">Nos produits</string>
     <string name="button_categories">Découvrir nos catégories</string>
     <string name="meuble_image">Image de meuble</string>
+    <string name="amazon">https://www.amazon.fr/</string>
+    <string name="netflix">https://www.netflix.fr/</string>
+    <string name="google">https://www.google.fr/</string>
+    <string name="microsoft">https://www.microsoft.fr/</string>
+    <string name="home_page_partainers">Découvrez nos partenaires de confiance</string>
 
 
 

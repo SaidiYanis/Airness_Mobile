@@ -1,10 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="lightGray">#989CA0</color>
-    <color name="darkGray">#202122</color>
-    <color name="primaryColor">#2D2D2D</color> <!-- Couleur noire pour les titres -->
-    <color name="secondaryColor">#585858</color> <!-- Couleur grise pour les sous-titres -->
-    <color name="accentColor">#1E88E5</color> <!-- Couleur d'accentuation pour les boutons -->
+    <color name="primaryColor">#FFFFFF</color> <!-- Blanc -->
+    <color name="secondaryColor">#F0F0F0</color> <!-- Gris clair -->
+    <color name="textColorPrimary">#000000</color> <!-- Noir -->
+    <color name="textColorSecondary">#606060</color> <!-- Gris foncé -->
+    <color name="buttonColorPrimary">#000000</color> <!-- Noir -->
+    <color name="buttonColorSecondary">#FFFFFF</color> <!-- Blanc -->
+    <color name="blueGrayColor">#607D8B</color> <!-- Bleu gris foncé -->
+    <color name="darkGray">#202122</color> <!-- Gris foncé -->
+    <color name="accentColor">#FF4081</color> <!-- Couleur d'accentuation -->
+    <color name="black">#000000</color> <!-- Noir -->
+    <color name="white">#FFFFFF</color> <!-- Blanc -->
+    <color name="colorBackground">#FFFFFF</color> <!-- Blanc pour l'arrière-plan -->
 </resources>
