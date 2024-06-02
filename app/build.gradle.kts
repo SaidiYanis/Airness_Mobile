@@ -1,12 +1,12 @@
-import org.apache.tools.ant.util.JavaEnvUtils.VERSION_1_8
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
+    id("androidx.navigation.safeargs.kotlin")
 }
-val sourceCompatibility by extra(VERSION_1_8)
-val targetCompatibility by extra(VERSION_1_8)
+
+val sourceCompatibility by extra { JavaVersion.VERSION_1_8 }
+val targetCompatibility by extra { JavaVersion.VERSION_1_8 }
 
 android {
     namespace = "com.airness.myapplication"
@@ -18,7 +18,6 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -31,16 +30,20 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         viewBinding = true
     }
+
     buildToolsVersion = "34.0.0"
 }
 
@@ -57,5 +60,4 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.12.0")
     kapt("com.github.bumptech.glide:compiler:4.12.0")
     implementation("jp.wasabeef:glide-transformations:4.3.0")
-
 }

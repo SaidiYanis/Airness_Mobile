@@ -30,7 +30,10 @@
 
 
     <!-- Products -->
-
+    <string-array name="sort_options">
+        <item>Trier par nom</item>
+        <item>Trier par prix</item>
+    </string-array>
     <!-- Categories -->
 
 </resources>

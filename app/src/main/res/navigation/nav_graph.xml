@@ -9,13 +9,28 @@
         android:id="@+id/nav_home"
         android:name="com.airness.myapplication.ui.HomeFragment"
         android:label="Accueil"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_productsFragment"
+            app:destination="@id/nav_products" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_products"
         android:name="com.airness.myapplication.ui.ProductsFragment"
         android:label="Produits"
-        tools:layout="@layout/fragment_products" />
+        tools:layout="@layout/fragment_products">
+        <action
+            android:id="@+id/action_productsFragment_to_homeFragment"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_productsFragment_to_detailFragment"
+            app:destination="@id/nav_detail">
+            <argument
+                android:name="meubleId"
+                app:argType="integer" />
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/nav_categories"
@@ -28,4 +43,10 @@
         android:name="com.airness.myapplication.ui.SettingsFragment"
         android:label="Paramètres"
         tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_detail"
+        android:name="com.airness.myapplication.ui.DetailFragment"
+        android:label="Détail"
+        tools:layout="@layout/fragment_detail" />
 </navigation>
