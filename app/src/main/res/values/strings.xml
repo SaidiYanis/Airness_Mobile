@@ -10,8 +10,9 @@
 
     <!-- Home -->
     <string name="home_page_round_title">Nouveautés artisanales</string>
-    <string name="home_page_catchphrase_dark">SOLUTION ARTISANALE POUR VOTRE MOBILIER DE QUALITÉ</string>
-    <string name="home_page_catchphrase_light_dark">Découvrez notre collection de meubles artisanaux fabriqués avec des matériaux de qualité en France par des artisans passionnés.</string>
+    <string name="home_page_catchphrase_dark">SOLUTION ARTISANALE </string>
+    <string name="home_page_catchphrase_light_dark">POUR VOTRE MOBILIER DE QUALITÉ</string>
+    <string name="home_page_info_light_dark">Découvrez notre collection de meubles artisanaux fabriqués avec des matériaux de qualité en France par des artisans passionnés.</string>
     <string name="home_page_description">Nos produits sont soigneusement sélectionnés pour offrir le meilleur rapport qualité-prix.</string>
     <string name="button_products">Nos produits</string>
     <string name="button_categories">Découvrir nos catégories</string>

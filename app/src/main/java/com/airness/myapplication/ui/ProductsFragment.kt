@@ -19,12 +19,15 @@ class ProductsFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var viewModel: MeubleViewModel
     private lateinit var adapter: MeubleAdapter
+    private var categoryId: Int = -1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProductsBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[MeubleViewModel::class.java]
+
+        categoryId = arguments?.getInt("categoryId") ?: -1
 
         adapter = MeubleAdapter(
             listOf(),
@@ -40,7 +43,12 @@ class ProductsFragment : Fragment() {
         binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
         binding.recyclerView.adapter = adapter
         viewModel.meubles.observe(viewLifecycleOwner) { meubles ->
-            adapter.updateData(meubles)
+            val filteredMeubles = if (categoryId != -1) {
+                meubles.filter { it.categoryId == categoryId }
+            } else {
+                meubles
+            }
+            adapter.updateData(filteredMeubles)
         }
 
         setupSpinner()

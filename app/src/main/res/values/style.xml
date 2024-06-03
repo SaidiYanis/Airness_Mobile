@@ -21,6 +21,12 @@
     </style>
 
     <!-- Style for headings -->
+    <style name="HeadingTextStyle_dark">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/darkGray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="HeadingTextStyle">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/blueGrayColor</item>

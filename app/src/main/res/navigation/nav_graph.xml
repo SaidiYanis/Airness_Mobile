@@ -20,6 +20,10 @@
         android:name="com.airness.myapplication.ui.ProductsFragment"
         android:label="Produits"
         tools:layout="@layout/fragment_products">
+        <argument
+            android:name="categoryId"
+            app:argType="integer"
+            android:defaultValue="-1" />
         <action
             android:id="@+id/action_productsFragment_to_homeFragment"
             app:destination="@id/nav_home" />
@@ -36,7 +40,15 @@
         android:id="@+id/nav_categories"
         android:name="com.airness.myapplication.ui.CategoriesFragment"
         android:label="Catégories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_categoriesFragment_to_productsFragment"
+            app:destination="@id/nav_products">
+            <argument
+                android:name="categoryId"
+                app:argType="integer" />
+        </action>
+    </fragment>
 
     <fragment
         android:id="@+id/nav_settings"

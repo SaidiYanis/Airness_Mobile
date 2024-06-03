@@ -30,22 +30,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/home_page_catchphrase_dark"
-        style="@style/HeadingTextStyle"/>
+        style="@style/HeadingTextStyle_dark"/>
+
+        <TextView
+            android:id="@+id/home_page_big_title_2"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_page_catchphrase_light_dark"
+            style="@style/HeadingTextStyle"/>
 
     <TextView
         android:id="@+id/home_page_subtitle"
         android:layout_marginLeft="@dimen/fab_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/home_page_catchphrase_light_dark"
+        android:text="@string/home_page_info_light_dark"
         style="@style/GrayTextStyle"/>
 
-    <TextView
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_page_description"
-        style="@style/GrayTextStyle"/>
 
     <Button
         android:id="@+id/button_products"
