@@ -60,5 +60,9 @@
         android:id="@+id/nav_detail"
         android:name="com.airness.myapplication.ui.DetailFragment"
         android:label="Détail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_detailFragment_to_homeFragment"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>
