@@ -27,5 +27,6 @@
         android:id="@+id/textViewCategoryDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Description de la catégorie" />
+        android:text="Description de la catégorie"
+        android:textSize="12sp" />
 </LinearLayout>

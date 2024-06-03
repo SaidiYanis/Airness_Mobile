@@ -25,6 +25,14 @@
             android:layout_weight="1" />
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rechercher un meuble"
+        android:padding="2dp"
+        android:background="@drawable/rounded_black_border" />
+
     <FrameLayout
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"

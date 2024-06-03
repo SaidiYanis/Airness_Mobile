@@ -1,6 +1,8 @@
 package com.airness.myapplication.ui
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.airness.myapplication.R
 import com.airness.myapplication.databinding.FragmentProductsBinding
+import com.airness.myapplication.entity.Meuble
 import com.airness.myapplication.viewmodel.MeubleViewModel
 
 class ProductsFragment : Fragment() {
@@ -20,6 +23,7 @@ class ProductsFragment : Fragment() {
     private lateinit var viewModel: MeubleViewModel
     private lateinit var adapter: MeubleAdapter
     private var categoryId: Int = -1
+    private var allMeubles: List<Meuble> = listOf() // To keep all meubles for search filtering
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -43,6 +47,7 @@ class ProductsFragment : Fragment() {
         binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
         binding.recyclerView.adapter = adapter
         viewModel.meubles.observe(viewLifecycleOwner) { meubles ->
+            allMeubles = meubles
             val filteredMeubles = if (categoryId != -1) {
                 meubles.filter { it.categoryId == categoryId }
             } else {
@@ -52,6 +57,7 @@ class ProductsFragment : Fragment() {
         }
 
         setupSpinner()
+        setupSearch()
         return binding.root
     }
 
@@ -75,6 +81,25 @@ class ProductsFragment : Fragment() {
 
             override fun onNothingSelected(parent: AdapterView<*>) {}
         }
+    }
+
+    private fun setupSearch() {
+        binding.editTextSearch.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterMeubles(s.toString())
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
+    }
+
+    private fun filterMeubles(query: String) {
+        val filteredMeubles = if (categoryId != -1) {
+            allMeubles.filter { it.categoryId == categoryId && it.name.contains(query, ignoreCase = true) }
+        } else {
+            allMeubles.filter { it.name.contains(query, ignoreCase = true) }
+        }
+        adapter.updateData(filteredMeubles)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
