@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.airness.myapplication.databinding.ItemCartBinding
 import com.airness.myapplication.model.CartItem
+import com.bumptech.glide.Glide
 
 class CartAdapter(
     private val onRemoveClick: (CartItem) -> Unit,
@@ -35,8 +36,11 @@ class CartAdapter(
     class CartViewHolder(val binding: ItemCartBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(cartItem: CartItem) {
             binding.textViewItemName.text = cartItem.meuble.name
-            binding.textViewItemQuantity.text = cartItem.quantity.toString()
             binding.textViewItemPrice.text = "${cartItem.meuble.price} €"
+            binding.textViewItemQuantity.text = cartItem.quantity.toString()
+            Glide.with(binding.root.context)
+                .load(binding.root.context.resources.getIdentifier(cartItem.meuble.imageUrl, "drawable", binding.root.context.packageName))
+                .into(binding.imageViewItem)
         }
     }
 }

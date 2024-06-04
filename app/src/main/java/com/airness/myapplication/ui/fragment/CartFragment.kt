@@ -50,6 +50,10 @@ class CartFragment : Fragment() {
         binding.buttonCheckout.setOnClickListener {
             findNavController().navigate(R.id.action_nav_cart_to_checkoutFragment)
         }
+
+        binding.buttonReturnToHome.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_cart_to_homeFragment)
+        }
     }
 
     override fun onDestroyView() {

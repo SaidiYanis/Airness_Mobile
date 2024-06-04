@@ -5,7 +5,6 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/nav_home">
 
-    <!-- Home Fragment -->
     <fragment
         android:id="@+id/nav_home"
         android:name="com.airness.myapplication.ui.fragment.HomeFragment"
@@ -16,7 +15,6 @@
             app:destination="@id/nav_products" />
     </fragment>
 
-    <!-- Products Fragment -->
     <fragment
         android:id="@+id/nav_products"
         android:name="com.airness.myapplication.ui.fragment.ProductsFragment"
@@ -40,7 +38,6 @@
         </action>
     </fragment>
 
-    <!-- Categories Fragment -->
     <fragment
         android:id="@+id/nav_categories"
         android:name="com.airness.myapplication.ui.fragment.CategoriesFragment"
@@ -58,13 +55,11 @@
         </action>
     </fragment>
 
-    <!-- Settings Fragment -->
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.airness.myapplication.ui.fragment.SettingsFragment"
         tools:layout="@layout/fragment_settings" />
 
-    <!-- Detail Fragment -->
     <fragment
         android:id="@+id/nav_detail"
         android:name="com.airness.myapplication.ui.fragment.DetailFragment"
@@ -96,7 +91,6 @@
             app:destination="@id/nav_categories" />
     </fragment>
 
-    <!-- Cart Fragment -->
     <fragment
         android:id="@+id/nav_cart"
         android:name="com.airness.myapplication.ui.fragment.CartFragment"
@@ -104,9 +98,11 @@
         <action
             android:id="@+id/action_nav_cart_to_checkoutFragment"
             app:destination="@id/checkoutFragment" />
+        <action
+            android:id="@+id/action_nav_cart_to_homeFragment"
+            app:destination="@id/nav_home" />
     </fragment>
 
-    <!-- Checkout Fragment -->
     <fragment
         android:id="@+id/checkoutFragment"
         android:name="com.airness.myapplication.ui.fragment.CheckoutFragment"

@@ -8,6 +8,11 @@
     <string name="search_hint">Rechercher un meuble</string>
     <string name="settings">Paramètres</string>
 
+    <!-- Menu -->
+    <string name="home">Accueil</string>
+    <string name="category">Catégories</string>
+    <string name="products">Produits</string>
+
     <!-- Home -->
     <string name="home_page_title">Nouveautés artisanales</string>
     <string name="home_page_catchphrase_dark">SOLUTION ARTISANALE</string>
@@ -43,5 +48,12 @@
     <string name="address">Adresse</string>
     <string name="city">Ville</string>
     <string name="postal_code">Code Postal</string>
-    <string name="place_order">Commandé</string>
+    <string name="country">Pays</string>
+    <string name="place_order">Passer une commande</string>
+    <string name="payment_details">Détails de paiement</string>
+    <string name="card_number">Numéro de carte (XXXX-XXXX-XXXX-XXXX)</string>
+    <string name="card_expiry">Expiration de la carte (MM/YY)</string>
+    <string name="card_cvc">CVC de la carte</string>
+    <string name="free_shipping">Livraison gratuite (0€)</string>
+    <string name="paid_shipping">Livraison payante (20€)</string>
 </resources>

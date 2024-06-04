@@ -16,6 +16,12 @@
             android:hint="@string/address" />
 
         <EditText
+            android:id="@+id/editTextCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/country" />
+
+        <EditText
             android:id="@+id/editTextCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,6 +32,43 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/postal_code" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_details"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp" />
+
+        <EditText
+            android:id="@+id/editTextCardNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/card_number" />
+
+        <EditText
+            android:id="@+id/editTextCardExpiry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/card_expiry" />
+
+        <EditText
+            android:id="@+id/editTextCardCVC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/card_cvc" />
+
+        <CheckBox
+            android:id="@+id/checkBoxFreeShipping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/free_shipping" />
+
+        <CheckBox
+            android:id="@+id/checkBoxPaidShipping"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/paid_shipping" />
 
         <Button
             android:id="@+id/buttonPlaceOrder"

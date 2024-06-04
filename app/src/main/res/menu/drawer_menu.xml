@@ -3,17 +3,13 @@
     <item
         android:id="@+id/nav_home"
         android:icon="@android:drawable/ic_menu_view"
-        android:title="Accueil" />
+        android:title="@string/home" />
     <item
         android:id="@+id/nav_products"
         android:icon="@android:drawable/ic_menu_gallery"
-        android:title="Produits" />
+        android:title="@string/products" />
     <item
         android:id="@+id/nav_categories"
         android:icon="@android:drawable/ic_menu_sort_by_size"
-        android:title="Catégories" />
-    <item
-        android:id="@+id/nav_settings"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:title="Paramètres" />
+        android:title="@string/category" />
 </menu>
