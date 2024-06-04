@@ -3,6 +3,7 @@ package com.airness.myapplication.ui
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         setSupportActionBar(binding.toolbar)
 
         cartViewModel = ViewModelProvider(this).get(CartViewModel::class.java)
@@ -70,6 +72,10 @@ class MainActivity : AppCompatActivity() {
             }
             binding.drawerLayout.closeDrawer(GravityCompat.START)
             true
+        }
+
+        binding.toolbar.findViewById<ImageView>(R.id.toolbar_logo).setOnClickListener {
+            navController.navigate(R.id.nav_home, null, getNavOptions())
         }
     }
 
