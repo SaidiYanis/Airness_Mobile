@@ -1,4 +1,4 @@
-package com.airness.myapplication.ui
+package com.airness.myapplication.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

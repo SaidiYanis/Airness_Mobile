@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HomeFragment">
+    tools:context=".ui.fragment.HomeFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,49 +13,41 @@
 
         <TextView
             android:id="@+id/home_page_title"
-            android:layout_marginLeft="@dimen/fab_margin"
-            android:layout_marginTop="@dimen/fab_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/home_page_round_title"
+            android:text="@string/home_page_title"
             android:background="@drawable/rounded_black_border"
             android:padding="2dp"
             style="@style/SubheadingTextStyle"/>
 
-
+        <TextView
+            android:id="@+id/home_page_catchphrase_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_page_catchphrase_dark"
+            style="@style/HeadingTextStyleDark"/>
 
         <TextView
-        android:id="@+id/home_page_big_title"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_page_catchphrase_dark"
-        style="@style/HeadingTextStyle_dark"/>
-
-        <TextView
-            android:id="@+id/home_page_big_title_2"
-            android:layout_marginLeft="@dimen/fab_margin"
+            android:id="@+id/home_page_catchphrase_light_dark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/home_page_catchphrase_light_dark"
             style="@style/HeadingTextStyle"/>
 
-    <TextView
-        android:id="@+id/home_page_subtitle"
-        android:layout_marginLeft="@dimen/fab_margin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/home_page_info_light_dark"
-        style="@style/GrayTextStyle"/>
+        <TextView
+            android:id="@+id/home_page_info_light_dark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home_page_info_light_dark"
+            style="@style/GrayTextStyle"/>
 
-
-    <Button
-        android:id="@+id/button_products"
-        style="@style/PrimaryButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/button_products" />
+        <Button
+            android:id="@+id/button_products"
+            style="@style/PrimaryButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/button_products" />
 
         <Button
             android:id="@+id/button_categories"
@@ -66,15 +58,13 @@
             android:text="@string/button_categories" />
 
         <ImageView
-        android:id="@+id/imageViewMeuble"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:contentDescription="@string/meuble_image" />
+            android:id="@+id/imageViewMeuble"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/meuble_image" />
 
         <TextView
             style="@style/GrayTextStyle"
@@ -82,7 +72,7 @@
             android:layout_height="match_parent"
             android:gravity="center_horizontal|bottom"
             android:paddingTop="40dp"
-            android:text="@string/home_page_partainers" />
+            android:text="@string/home_page_partners" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -101,7 +91,6 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/amazon" />
 
-
             <ImageButton
                 android:id="@+id/logo_google"
                 android:layout_width="0dp"
@@ -112,7 +101,6 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/google" />
 
-
             <ImageButton
                 android:id="@+id/logo_netflix"
                 android:layout_width="0dp"
@@ -122,7 +110,6 @@
                 android:contentDescription="@string/netflix"
                 android:scaleType="fitCenter"
                 android:src="@drawable/netflix" />
-
 
             <ImageButton
                 android:id="@+id/logo_microsoft"

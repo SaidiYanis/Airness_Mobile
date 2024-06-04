@@ -1,6 +1,6 @@
 package com.airness.myapplication.repository
 
-import com.airness.myapplication.entity.Meuble
+import com.airness.myapplication.model.Meuble
 
 class MeubleRepository {
 

@@ -1,4 +1,4 @@
-package com.airness.myapplication.view
+package com.airness.myapplication.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -36,8 +36,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.navView.setupWithNavController(navController)
 
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.nav_detail -> supportActionBar?.title = ""
+                else -> supportActionBar?.title = ""
+            }
+        }
+
         binding.navView.setNavigationItemSelectedListener { menuItem ->
-            // Handle navigation view item clicks here.
             when (menuItem.itemId) {
                 R.id.nav_home -> {
                     navController.navigate(R.id.nav_home, null, getNavOptions())
@@ -67,4 +73,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }

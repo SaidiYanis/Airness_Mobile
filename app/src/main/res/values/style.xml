@@ -1,27 +1,24 @@
 <resources>
     <!-- Base application theme -->
     <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your theme here -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryDark">@color/darkGray</item>
         <item name="colorAccent">@color/accentColor</item>
         <item name="android:textColor">@color/black</item>
     </style>
 
-    <!-- Style for default text -->
+    <!-- Text Styles -->
     <style name="DefaultTextStyle">
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@color/textColorPrimary</item>
     </style>
 
-    <!-- Style for gray text -->
     <style name="GrayTextStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:textColor">@color/textColorSecondary</item>
     </style>
 
-    <!-- Style for headings -->
-    <style name="HeadingTextStyle_dark">
+    <style name="HeadingTextStyleDark">
         <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/darkGray</item>
         <item name="android:textStyle">bold</item>
@@ -33,56 +30,51 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <!-- Style for subheadings -->
     <style name="SubheadingTextStyle">
         <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/textColorSecondary</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <!-- Style personnalisé pour les boutons principaux -->
+    <!-- Button Styles -->
     <style name="PrimaryButtonStyle" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/buttonColorPrimary</item>
         <item name="android:textColor">@color/buttonColorSecondary</item>
         <item name="android:padding">16dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:layout_margin">8dp</item>
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApplication.Button</item>
+        <item name="shapeAppearanceOverlay">@style/ButtonShape</item>
     </style>
 
-    <!-- Style personnalisé pour les boutons secondaires -->
     <style name="SecondaryButtonStyle" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/blueGrayColor</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:padding">16dp</item>
         <item name="android:textSize">16sp</item>
         <item name="android:layout_margin">8dp</item>
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApplication.Button</item>
+        <item name="shapeAppearanceOverlay">@style/ButtonShape</item>
     </style>
 
-
-    <!-- Style Produits pour les boutons ShowProduct -->
-    <style name="ShowProduct" parent="Widget.MaterialComponents.Button">
+    <style name="ShowProductButtonStyle" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/buttonColorPrimary</item>
         <item name="android:textColor">@color/buttonColorSecondary</item>
         <item name="android:padding">8dp</item>
         <item name="android:textSize">8sp</item>
         <item name="android:layout_margin">4dp</item>
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApplication.Button</item>
+        <item name="shapeAppearanceOverlay">@style/ButtonShape</item>
     </style>
 
-    <!-- Style Produits pour les boutons AddToCart -->
-    <style name="AddToCart" parent="Widget.MaterialComponents.Button">
+    <style name="AddToCartButtonStyle" parent="Widget.MaterialComponents.Button">
         <item name="android:backgroundTint">@color/blueGrayColor</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:padding">6dp</item>
         <item name="android:textSize">8sp</item>
         <item name="android:layout_margin">2dp</item>
-        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.MyApplication.Button</item>
+        <item name="shapeAppearanceOverlay">@style/ButtonShape</item>
     </style>
 
-    <!-- Overlay for button shapes -->
-    <style name="ShapeAppearanceOverlay.MyApplication.Button" parent="">
+    <!-- Button Shape -->
+    <style name="ButtonShape" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>

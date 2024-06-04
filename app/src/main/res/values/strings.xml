@@ -1,45 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Airness</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="previous">Retour</string>
+    <string name="price">Prix</string>
+    <string name="product_name">Nom du produit</string>
+    <string name="name">Nom</string>
+    <string name="search_hint">Rechercher un meuble</string>
+    <string name="settings">Paramètres</string>
 
     <!-- Home -->
-    <string name="home_page_round_title">Nouveautés artisanales</string>
-    <string name="home_page_catchphrase_dark">SOLUTION ARTISANALE </string>
+    <string name="home_page_title">Nouveautés artisanales</string>
+    <string name="home_page_catchphrase_dark">SOLUTION ARTISANALE</string>
     <string name="home_page_catchphrase_light_dark">POUR VOTRE MOBILIER DE QUALITÉ</string>
     <string name="home_page_info_light_dark">Découvrez notre collection de meubles artisanaux fabriqués avec des matériaux de qualité en France par des artisans passionnés.</string>
-    <string name="home_page_description">Nos produits sont soigneusement sélectionnés pour offrir le meilleur rapport qualité-prix.</string>
+    <string name="home_page_partners">Découvrez nos partenaires de confiance</string>
     <string name="button_products">Nos produits</string>
     <string name="button_categories">Découvrir nos catégories</string>
     <string name="meuble_image">Image de meuble</string>
-    <string name="amazon">https://www.amazon.fr/</string>
-    <string name="netflix">https://www.netflix.fr/</string>
-    <string name="google">https://www.google.fr/</string>
-    <string name="microsoft">https://www.microsoft.fr/</string>
-    <string name="home_page_partainers">Découvrez nos partenaires de confiance</string>
-
-
 
     <!-- Meuble -->
     <string name="meuble_page_add_basket">Ajouter au panier</string>
     <string name="meuble_page_see_product">Voir le produit</string>
 
-
-    <!-- Products -->
+    <!-- Sort Options -->
     <string-array name="sort_options">
         <item>Trier par nom</item>
         <item>Trier par prix</item>
     </string-array>
-    <!-- Categories -->
 
+    <!-- Partners -->
+    <string name="amazon">https://www.amazon.fr/</string>
+    <string name="netflix">https://www.netflix.fr/</string>
+    <string name="google">https://www.google.fr/</string>
+    <string name="microsoft">https://www.microsoft.fr/</string>
 </resources>
-
-
-
-
-

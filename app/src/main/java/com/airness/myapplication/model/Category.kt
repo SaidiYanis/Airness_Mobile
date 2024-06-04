@@ -1,4 +1,4 @@
-package com.airness.myapplication.entity
+package com.airness.myapplication.model
 
 data class Category(
     val id: Int,

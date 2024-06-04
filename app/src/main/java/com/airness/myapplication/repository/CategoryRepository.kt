@@ -1,6 +1,6 @@
 package com.airness.myapplication.repository
 
-import com.airness.myapplication.entity.Category
+import com.airness.myapplication.model.Category
 
 class CategoryRepository {
 

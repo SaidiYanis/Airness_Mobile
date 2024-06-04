@@ -1,4 +1,4 @@
-package com.airness.myapplication.ui
+package com.airness.myapplication.ui.fragment
 
 import android.os.Bundle
 import android.text.Editable
@@ -14,13 +14,16 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.airness.myapplication.R
 import com.airness.myapplication.databinding.FragmentProductsBinding
-import com.airness.myapplication.entity.Meuble
+import com.airness.myapplication.model.Meuble
+import com.airness.myapplication.ui.adapter.MeubleAdapter
 import com.airness.myapplication.viewmodel.MeubleViewModel
+import com.airness.myapplication.viewmodel.NavigationViewModel
 
 class ProductsFragment : Fragment() {
     private var _binding: FragmentProductsBinding? = null
     private val binding get() = _binding!!
     private lateinit var viewModel: MeubleViewModel
+    private lateinit var navigationViewModel: NavigationViewModel
     private lateinit var adapter: MeubleAdapter
     private var categoryId: Int = -1
     private var allMeubles: List<Meuble> = listOf() // To keep all meubles for search filtering
@@ -30,13 +33,15 @@ class ProductsFragment : Fragment() {
     ): View? {
         _binding = FragmentProductsBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[MeubleViewModel::class.java]
+        navigationViewModel = ViewModelProvider(requireActivity())[NavigationViewModel::class.java]
 
         categoryId = arguments?.getInt("categoryId") ?: -1
 
         adapter = MeubleAdapter(
             listOf(),
             onProductClick = { meuble ->
-                val action = ProductsFragmentDirections.actionProductsFragmentToDetailFragment(meuble.id)
+                navigationViewModel.addPage("products")
+                val action = ProductsFragmentDirections.actionProductsFragmentToDetailFragment(meuble.id, "products")
                 findNavController().navigate(action)
             },
             onAddToCartClick = { meuble ->

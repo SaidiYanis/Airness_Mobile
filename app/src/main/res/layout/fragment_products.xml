@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".ui.fragment.ProductsFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:paddingBottom="8dp">
 
         <Button
             android:id="@+id/buttonToHome"
@@ -16,7 +18,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Retour à l'accueil" />
+            android:text="@string/previous" />
 
         <Spinner
             android:id="@+id/spinnerSort"
@@ -29,23 +31,17 @@
         android:id="@+id/editTextSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Rechercher un meuble"
-        android:padding="2dp"
-        android:background="@drawable/rounded_black_border" />
+        android:hint="@string/search_hint"
+        android:padding="8dp"
+        android:background="@drawable/rounded_black_border"
+        android:layout_marginBottom="8dp"/>
 
-    <FrameLayout
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.ProductsFragment">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="4dp"
-            android:clipToPadding="false"
-            android:scrollbars="vertical" />
-    </FrameLayout>
-
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="4dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
 </LinearLayout>

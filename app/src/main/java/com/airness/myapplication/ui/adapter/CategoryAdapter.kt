@@ -1,10 +1,10 @@
-package com.airness.myapplication.ui
+package com.airness.myapplication.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.airness.myapplication.databinding.ItemCategoryBinding
-import com.airness.myapplication.entity.Category
+import com.airness.myapplication.model.Category
 import com.bumptech.glide.Glide
 
 class CategoryAdapter(
