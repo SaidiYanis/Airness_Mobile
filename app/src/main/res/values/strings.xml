@@ -33,4 +33,15 @@
     <string name="netflix">https://www.netflix.fr/</string>
     <string name="google">https://www.google.fr/</string>
     <string name="microsoft">https://www.microsoft.fr/</string>
+
+    <!-- basket -->
+    <string name="cart">Panier</string>
+    <string name="total_price">Prix Total: %1$s €</string>
+    <string name="checkout">Valider le panier</string>
+
+    <!-- checkout -->
+    <string name="address">Adresse</string>
+    <string name="city">Ville</string>
+    <string name="postal_code">Code Postal</string>
+    <string name="place_order">Commandé</string>
 </resources>
