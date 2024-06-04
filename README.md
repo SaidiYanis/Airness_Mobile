@@ -41,7 +41,8 @@ MyApplication est une application Android permettant aux utilisateurs de parcour
 
 ## Structure du projet
 
-MyApplication
+```
+Airness
 ├── app
 │   ├── src
 │   │   ├── main
@@ -86,29 +87,37 @@ MyApplication
 ├── build.gradle
 ├── settings.gradle
 └── ...
+```
+
 ## Configuration initiale
 
 ### 1. Cloner le dépôt
 
+```bash
 git clone https://github.com/votre-utilisateur/MyApplication.git
 cd MyApplication
-
+```
 
 ### 2. Ouvrir le projet dans Android Studio
-Lancez Android Studio.
-Sélectionnez Open an existing Android Studio project.
-Naviguez jusqu'au répertoire du projet et sélectionnez-le.
+
+- Lancez Android Studio.
+- Sélectionnez `Open an existing Android Studio project`.
+- Naviguez jusqu'au répertoire du projet et sélectionnez-le.
 
 ### 3. Synchroniser le projet avec Gradle
-Android Studio devrait automatiquement commencer à synchroniser le projet avec Gradle.
-Si ce n'est pas le cas, cliquez sur File > Sync Project with Gradle Files.
+
+- Android Studio devrait automatiquement commencer à synchroniser le projet avec Gradle.
+- Si ce n'est pas le cas, cliquez sur `File > Sync Project with Gradle Files`.
 
 ### 4. Ajouter les clés API nécessaires (si applicable)
-Si le projet utilise des API nécessitant des clés ou des configurations spécifiques, ajoutez-les dans les fichiers appropriés (par exemple, local.properties ou des fichiers de configuration spécifiques).
-Dépendances
-Le fichier build.gradle (module : app) contient toutes les dépendances nécessaires pour le projet :
 
+- Si le projet utilise des API nécessitant des clés ou des configurations spécifiques, ajoutez-les dans les fichiers appropriés (par exemple, `local.properties` ou des fichiers de configuration spécifiques).
 
+## Dépendances
+
+Le fichier `build.gradle` (module : app) contient toutes les dépendances nécessaires pour le projet :
+
+```groovy
 dependencies {
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
@@ -123,32 +132,46 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
+```
 
-### Instructions pour le développement
-## Ajouter de nouveaux produits
-Ajoutez de nouveaux objets Meuble dans le fichier de données source (ou la base de données si applicable).
-Mettez à jour l'interface utilisateur si nécessaire.
-## Ajouter de nouvelles fonctionnalités
-Créez un nouveau fragment pour la fonctionnalité.
-Ajoutez la navigation vers ce fragment dans le fichier de navigation.
-Mettez à jour le ViewModel et les adapters si nécessaire.
-## Tester l'application
-Exécutez les tests unitaires avec JUnit.
-Effectuez des tests instrumentés avec Espresso.
-### Architecture
-## MVVM (Model-View-ViewModel)
+## Instructions pour le développement
+
+### Ajouter de nouveaux produits
+
+- Ajoutez de nouveaux objets `Meuble` dans le fichier de données source (ou la base de données si applicable).
+- Mettez à jour l'interface utilisateur si nécessaire.
+
+### Ajouter de nouvelles fonctionnalités
+
+- Créez un nouveau fragment pour la fonctionnalité.
+- Ajoutez la navigation vers ce fragment dans le fichier de navigation.
+- Mettez à jour le ViewModel et les adapters si nécessaire.
+
+### Tester l'application
+
+- Exécutez les tests unitaires avec JUnit.
+- Effectuez des tests instrumentés avec Espresso.
+
+## Architecture
+
+### MVVM (Model-View-ViewModel)
+
 L'application suit le modèle d'architecture MVVM pour une séparation claire des préoccupations et une meilleure testabilité.
 
-Model : Représente les données de l'application. Ce sont les classes de données comme Meuble et CartItem.
-View : Les activités et les fragments qui affichent les données et écoutent les interactions de l'utilisateur.
-ViewModel : Gère la logique de l'application et prépare les données pour la vue.
-## Navigation Component
-Utilisation du composant de navigation de Jetpack pour gérer les transitions entre les fragments et les actions de navigation.
-## ViewBinding et DataBinding
-ViewBinding : Pour lier les vues sans les nécessités d'utiliser findViewById.
-DataBinding : Pour lier les données aux vues et gérer les interactions de l'utilisateur.
-### Licence
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus d'informations.
+- **Model** : Représente les données de l'application. Ce sont les classes de données comme `Meuble` et `CartItem`.
+- **View** : Les activités et les fragments qui affichent les données et écoutent les interactions de l'utilisateur.
+- **ViewModel** : Gère la logique de l'application et prépare les données pour la vue.
 
+### Navigation Component
 
-N'hésitez pas à ajuster ce README en fonction de votre projet spécifique et à ajouter des détails
+- Utilisation du composant de navigation de Jetpack pour gérer les transitions entre les fragments et les actions de navigation.
+
+### ViewBinding et DataBinding
+
+- **ViewBinding** : Pour lier les vues sans les nécessités d'utiliser `findViewById`.
+- **DataBinding** : Pour lier les données aux vues et gérer les interactions de l'utilisateur.
+
+## Licence
+
+Ce projet est sous licence MIT. Consultez le fichier [LICENSE](LICENSE) pour plus d'informations.
+```
