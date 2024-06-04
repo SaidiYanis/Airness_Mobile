@@ -84,7 +84,7 @@ class ProductsFragment : Fragment() {
         }
 
         binding.spinnerSort.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
                 when (position) {
                     0 -> adapter.sortBy { it.name as Comparable<Any> }
                     1 -> adapter.sortBy { it.price as Comparable<Any> }
