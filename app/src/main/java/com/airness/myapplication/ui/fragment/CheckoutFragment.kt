@@ -1,4 +1,4 @@
-package com.airness.myapplication.ui
+package com.airness.myapplication.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,9 +14,17 @@ class CheckoutFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         _binding = FragmentCheckoutBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.buttonPlaceOrder.setOnClickListener {
+            // Logique pour passer la commande
+        }
     }
 
     override fun onDestroyView() {

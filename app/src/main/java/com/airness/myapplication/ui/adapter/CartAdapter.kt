@@ -1,23 +1,17 @@
-package com.airness.myapplication.ui
+package com.airness.myapplication.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.airness.myapplication.databinding.ItemCartBinding
 import com.airness.myapplication.model.CartItem
-import com.bumptech.glide.Glide
 
 class CartAdapter(
     private val onRemoveClick: (CartItem) -> Unit,
     private val onAddClick: (CartItem) -> Unit
 ) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
-    private var items: List<CartItem> = listOf()
-
-    fun submitList(newItems: List<CartItem>) {
-        items = newItems
-        notifyDataSetChanged()
-    }
+    private var cartItems: List<CartItem> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val binding = ItemCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -25,22 +19,24 @@ class CartAdapter(
     }
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
-        val item = items[position]
-        holder.bind(item)
-        holder.binding.buttonRemove.setOnClickListener { onRemoveClick(item) }
-        holder.binding.buttonAdd.setOnClickListener { onAddClick(item) }
+        val cartItem = cartItems[position]
+        holder.bind(cartItem)
+        holder.binding.buttonRemove.setOnClickListener { onRemoveClick(cartItem) }
+        holder.binding.buttonAdd.setOnClickListener { onAddClick(cartItem) }
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun getItemCount(): Int = cartItems.size
+
+    fun submitList(newCartItems: List<CartItem>) {
+        cartItems = newCartItems
+        notifyDataSetChanged()
+    }
 
     class CartViewHolder(val binding: ItemCartBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: CartItem) {
-            binding.textViewItemName.text = item.meuble.name
-            binding.textViewItemQuantity.text = item.quantity.toString()
-            binding.textViewItemPrice.text = "${item.meuble.price} €"
-            Glide.with(binding.root.context)
-                .load(binding.root.context.resources.getIdentifier(item.meuble.imageUrl, "drawable", binding.root.context.packageName))
-                .into(binding.imageViewItem)
+        fun bind(cartItem: CartItem) {
+            binding.textViewItemName.text = cartItem.meuble.name
+            binding.textViewItemQuantity.text = cartItem.quantity.toString()
+            binding.textViewItemPrice.text = "${cartItem.meuble.price} €"
         }
     }
 }

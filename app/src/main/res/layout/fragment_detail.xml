@@ -93,6 +93,14 @@
             android:shadowRadius="1" />
 
         <Button
+            android:id="@+id/buttonAddToCart"
+            style="@style/PrimaryButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/meuble_page_add_basket"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
             android:id="@+id/buttonToHomeFromDetail"
             style="@style/PrimaryButtonStyle"
             android:layout_width="wrap_content"

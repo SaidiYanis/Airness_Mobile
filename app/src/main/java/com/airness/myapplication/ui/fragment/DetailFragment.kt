@@ -11,9 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.airness.myapplication.databinding.FragmentDetailBinding
 import com.airness.myapplication.viewmodel.MeubleViewModel
 import com.airness.myapplication.viewmodel.NavigationViewModel
+import com.airness.myapplication.viewmodel.CartViewModel
 import com.bumptech.glide.Glide
 import com.airness.myapplication.R
 import com.airness.myapplication.ui.adapter.MeubleAdapter
+import com.airness.myapplication.model.Meuble
 
 class DetailFragment : Fragment() {
 
@@ -21,6 +23,7 @@ class DetailFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var viewModel: MeubleViewModel
     private lateinit var navigationViewModel: NavigationViewModel
+    private lateinit var cartViewModel: CartViewModel
     private var meubleId: Int = -1
     private lateinit var similarAdapter: MeubleAdapter
     private var returnTo: String? = null
@@ -31,6 +34,7 @@ class DetailFragment : Fragment() {
         _binding = FragmentDetailBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[MeubleViewModel::class.java]
         navigationViewModel = ViewModelProvider(requireActivity())[NavigationViewModel::class.java]
+        cartViewModel = ViewModelProvider(requireActivity())[CartViewModel::class.java]
         meubleId = arguments?.getInt("meubleId") ?: -1
         returnTo = arguments?.getString("returnTo")
 
@@ -41,12 +45,16 @@ class DetailFragment : Fragment() {
     private fun setupSimilarProductsRecyclerView() {
         similarAdapter = MeubleAdapter(
             listOf(),
-            onProductClick = { meuble ->
+            onProductClick = { meuble: Meuble ->
                 val action = DetailFragmentDirections.actionDetailFragmentSelf(meuble.id, returnTo ?: "")
                 findNavController().navigate(action)
             },
-            onAddToCartClick = { meuble ->
-                // Handle add to cart
+            onAddToCartClick = { meuble: Meuble ->
+                cartViewModel.addToCart(meuble)
+            },
+            onViewProductClick = { meuble: Meuble ->
+                val action = DetailFragmentDirections.actionDetailFragmentSelf(meuble.id, returnTo ?: "")
+                findNavController().navigate(action)
             }
         )
 
@@ -81,6 +89,12 @@ class DetailFragment : Fragment() {
                 "products" -> findNavController().navigate(R.id.action_detailFragment_to_productsFragment)
                 "categories" -> findNavController().navigate(R.id.action_detailFragment_to_categoriesFragment)
                 else -> findNavController().navigate(R.id.action_detailFragment_to_homeFragment)
+            }
+        }
+
+        binding.buttonAddToCart.setOnClickListener {
+            viewModel.meubles.value?.find { it.id == meubleId }?.let {
+                cartViewModel.addToCart(it)
             }
         }
     }

@@ -42,6 +42,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 
     buildToolsVersion = "34.0.0"
@@ -61,4 +62,6 @@ dependencies {
     kapt("com.github.bumptech.glide:compiler:4.12.0")
     implementation("jp.wasabeef:glide-transformations:4.3.0")
     implementation ("com.google.android.material:material:1.4.0")
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.3.5")
 }

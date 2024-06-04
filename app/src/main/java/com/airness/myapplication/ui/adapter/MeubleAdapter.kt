@@ -10,7 +10,8 @@ import com.bumptech.glide.Glide
 class MeubleAdapter(
     private var meubles: List<Meuble>,
     private val onProductClick: (Meuble) -> Unit,
-    private val onAddToCartClick: (Meuble) -> Unit
+    private val onAddToCartClick: (Meuble) -> Unit,
+    private val onViewProductClick: (Meuble) -> Unit
 ) : RecyclerView.Adapter<MeubleAdapter.MeubleViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MeubleViewHolder {
@@ -21,8 +22,8 @@ class MeubleAdapter(
     override fun onBindViewHolder(holder: MeubleViewHolder, position: Int) {
         val meuble = meubles[position]
         holder.bind(meuble)
-        holder.binding.buttonViewProduct.setOnClickListener { onProductClick(meuble) }
         holder.binding.buttonAddToCart.setOnClickListener { onAddToCartClick(meuble) }
+        holder.binding.buttonViewProduct.setOnClickListener { onViewProductClick(meuble) }
     }
 
     override fun getItemCount(): Int = meubles.size
@@ -32,13 +33,8 @@ class MeubleAdapter(
         notifyDataSetChanged()
     }
 
-    fun sortByName() {
-        meubles = meubles.sortedBy { it.name }
-        notifyDataSetChanged()
-    }
-
-    fun sortByPrice() {
-        meubles = meubles.sortedBy { it.price }
+    fun sortBy(selector: (Meuble) -> Comparable<*>) {
+        meubles = meubles.sortedWith(compareBy(selector))
         notifyDataSetChanged()
     }
 

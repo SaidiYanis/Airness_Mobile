@@ -1,4 +1,4 @@
-package com.airness.myapplication.ui
+package com.airness.myapplication.ui.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.airness.myapplication.R
 import com.airness.myapplication.databinding.FragmentCartBinding
 import com.airness.myapplication.viewmodel.CartViewModel
+import com.airness.myapplication.ui.adapter.CartAdapter
 
 class CartFragment : Fragment() {
 
@@ -43,7 +44,7 @@ class CartFragment : Fragment() {
 
         cartViewModel.cartItems.observe(viewLifecycleOwner) { items ->
             adapter.submitList(items)
-            binding.textViewTotalPrice.text = getString(R.string.total_price, String.format("%.2f", cartViewModel.getTotalPrice()))
+            binding.textViewTotalPrice.text = getString(R.string.total_price, cartViewModel.getTotalPrice().toString())
         }
 
         binding.buttonCheckout.setOnClickListener {

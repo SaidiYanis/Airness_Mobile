@@ -15,25 +15,28 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.airness.myapplication.R
 import com.airness.myapplication.databinding.FragmentProductsBinding
 import com.airness.myapplication.model.Meuble
-import com.airness.myapplication.ui.adapter.MeubleAdapter
+import com.airness.myapplication.viewmodel.CartViewModel
 import com.airness.myapplication.viewmodel.MeubleViewModel
 import com.airness.myapplication.viewmodel.NavigationViewModel
+import com.airness.myapplication.ui.adapter.MeubleAdapter
 
 class ProductsFragment : Fragment() {
     private var _binding: FragmentProductsBinding? = null
     private val binding get() = _binding!!
-    private lateinit var viewModel: MeubleViewModel
+    private lateinit var meubleViewModel: MeubleViewModel
     private lateinit var navigationViewModel: NavigationViewModel
+    private lateinit var cartViewModel: CartViewModel
     private lateinit var adapter: MeubleAdapter
     private var categoryId: Int = -1
-    private var allMeubles: List<Meuble> = listOf() // To keep all meubles for search filtering
+    private var allMeubles: List<Meuble> = listOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentProductsBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this)[MeubleViewModel::class.java]
+        meubleViewModel = ViewModelProvider(this)[MeubleViewModel::class.java]
         navigationViewModel = ViewModelProvider(requireActivity())[NavigationViewModel::class.java]
+        cartViewModel = ViewModelProvider(requireActivity())[CartViewModel::class.java]
 
         categoryId = arguments?.getInt("categoryId") ?: -1
 
@@ -45,13 +48,17 @@ class ProductsFragment : Fragment() {
                 findNavController().navigate(action)
             },
             onAddToCartClick = { meuble ->
-                // Handle add to cart
+                cartViewModel.addToCart(meuble)
+            },
+            onViewProductClick = { meuble ->
+                val action = ProductsFragmentDirections.actionProductsFragmentToDetailFragment(meuble.id, "products")
+                findNavController().navigate(action)
             }
         )
 
         binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
         binding.recyclerView.adapter = adapter
-        viewModel.meubles.observe(viewLifecycleOwner) { meubles ->
+        meubleViewModel.meubles.observe(viewLifecycleOwner) { meubles ->
             allMeubles = meubles
             val filteredMeubles = if (categoryId != -1) {
                 meubles.filter { it.categoryId == categoryId }
@@ -79,8 +86,8 @@ class ProductsFragment : Fragment() {
         binding.spinnerSort.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
                 when (position) {
-                    0 -> adapter.sortByName()
-                    1 -> adapter.sortByPrice()
+                    0 -> adapter.sortBy { it.name as Comparable<Any> }
+                    1 -> adapter.sortBy { it.price as Comparable<Any> }
                 }
             }
 
