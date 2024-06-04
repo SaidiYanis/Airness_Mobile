@@ -2,8 +2,8 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape>
-            <solid android:color="@android:color/white"/> <!-- Fond blanc -->
-            <stroke android:width="2dp" android:color="#000000"/> <!-- Bordure noire -->
+            <solid android:color="@color/white"/> <!-- Fond blanc -->
+            <stroke android:width="2dp" android:color="@color/black"/> <!-- Bordure noire -->
             <corners android:radius="8dp"/> <!-- Coins arrondis -->
         </shape>
     </item>
