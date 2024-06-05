@@ -1,5 +1,8 @@
 # Airness
 
+<!-- Note: Due to issues, the main code is in the dev branch -->
+<!-- Link to JIRA: https://b3dev.atlassian.net/jira/software/projects/AIRNESS/ -->
+
 ## Description
 
 MyApplication est une application Android permettant aux utilisateurs de parcourir une liste de produits, d'ajouter des articles à un panier, de visualiser les détails des produits et de passer des commandes. L'application utilise plusieurs technologies modernes pour offrir une expérience utilisateur fluide et réactive.
