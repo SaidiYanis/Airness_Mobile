@@ -1,6 +1,6 @@
 # Airness
 
-### Note: Due to issues, the main code is in the dev branch 
+### Note: En raison de problèmes, le code principal se trouve dans la branche dev
 ### Lien du JIRA: https://b3dev.atlassian.net/jira/software/projects/AIRNESS/
 
 ## Description
