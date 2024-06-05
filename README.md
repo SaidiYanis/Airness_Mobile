@@ -1,7 +1,7 @@
 # Airness
 
-<!-- Note: Due to issues, the main code is in the dev branch -->
-<!-- Link to JIRA: https://b3dev.atlassian.net/jira/software/projects/AIRNESS/ -->
+### Note: Due to issues, the main code is in the dev branch 
+### Lien du JIRA: https://b3dev.atlassian.net/jira/software/projects/AIRNESS/
 
 ## Description
 
